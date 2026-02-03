@@ -5,39 +5,44 @@ menu = '''
 Menu de comidas rapidas \n
 1. Hamburguesas
 2. Pizzas
-3. Perros calientes
-4. Mazorcadas
-5. Salir \n
+3. Salir \n
 '''
-hamburguesas =  ( '''
-Escoga una hamburguesa \n
-1. Clasica
-2. Pollo
-3. Cerdo BBQ
-4. Volver al menu
-''')
 
 while True:
     opcion = 0
     print(menu)
     try: 
         opcion = int(input("Escribe una opcion: "))
+        if opcion == 3:
+            break
     except ValueError:
         print("escoge una opcion valida")
-    if opcion == 1:
-        volver = print(menu)
-        opcion_hamburguesa = 0
-        print(hamburguesas)
-        opcion_hamburguesa = int(input("Elige alguna hamburguesa: "))
-        if opcion_hamburguesa == 4:
-            volver = input("estas seguro de volver al menu?")
-            if volver == "s":
-                print(menu)
-    if opcion == 5:
-        opcion = input("Estas seguro de salir del sistema? ")
-        if opcion == "s":
-            break
-                    
+    while True:
+        if opcion == 1:
+            opcion_hamburguesa = 0
+            print('''
+                Escoga una hamburguesa \n
+                1. Clasica \r
+                2. Pollo
+                3. Cerdo BBQ
+                4. Volver al menu
+                ''')
+            opcion_hamburguesa = int(input("Elige alguna hamburguesa: "))
+            if opcion_hamburguesa == 4:
+                break
+        elif opcion == 2:
+            print("Estas son las opciones que tenemos de pizzas")
+            print('''
+                1. Pizza napolitana \r.
+                2. Pizza hawaiana.
+                3. Pizza marinara.
+                4. Salir al menu principal''')
+            opcion_pizza = 0
+            opcion_pizza = int(input("cual es la pizza que deseas?"))
+            if opcion_pizza == 4:
+                break
+
+            
 
         
 
