@@ -29,9 +29,18 @@ while True:
             print(f"Las tareas que tenemos agregadas son: {tareas} ")
             break
         elif opcion == 3:
-            num_tareas =  # Imprime el numero de las tareas
-            print("Estas son las tareas que estan")
-            break
+            print("Estas son las tareas que tenemos agregadas: \n")
+            posicion = 0
+            for tarea in tareas:
+                print(f"{posicion}:{tarea}")
+                posicion = posicion + 1
+            eliminar = int(input("Escriba el indice de la tarea que desea eliminar: "))
+            print(f"la tarea que se elimino fue {tareas[eliminar]}")
+            tareas.pop(eliminar)
+            print("Tarea eliminada compruebe en el sistema que se elimino")
+            break           
+            
+            
                 
     
 
