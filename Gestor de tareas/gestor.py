@@ -38,7 +38,7 @@ while True:
             print(f"la tarea que se elimino fue {tareas[eliminar]}")
             tareas.pop(eliminar)
             print("Tarea eliminada compruebe en el sistema que se elimino")
-            break           
+            break                   
             
             
                 

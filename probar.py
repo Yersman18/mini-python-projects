@@ -1,12 +1,4 @@
-nombres = ["esteban", "daniel", "sebastian"]
-longitud = len(nombres)
-contador = 0
+usuario = dict.fromkeys(["nombre", "contraseña"])
 
-for nombre in nombres:
-    print(f"{contador}:{nombre}")
-    contador = contador + 1
-
-
-
-
+print(usuario )
 
