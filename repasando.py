@@ -8,7 +8,11 @@ while True:
     print("1.Agregar")
     print("2.Ver tareas")
     print("3. Salir\n")
-    opcion = int(input("Escoge una opcion: "))
+    try:
+        opcion = int(input("Escoge una opcion: "))
+    except ValueError:
+        print("La opcion no es valida")
+        continue
     if opcion == 3:
         salir = input("Esta seguro salir del sistema? ")
         if salir == "si":
@@ -16,10 +20,16 @@ while True:
     while True:
         if opcion == 1:
             tarea = input("Agrega una tarea: ")
-            lista_tareas.append(tarea)
-            volver = input("Quiere agregar otra tarea? ")
-            if volver == "no":
-                break
+            if tarea == "":
+                print("no es valida esta respuesta")
+            else:
+                lista_tareas.append(tarea)
+                volver = input("Quiere agregar otra tarea? ")
+                if volver == "":
+                    print("no es valida esta respuesta")
+                    break
+                if volver == "no":
+                    break
         elif opcion == 2:
             print("Tareas agregadas: \n")
             for i in lista_tareas:

@@ -21,7 +21,11 @@ while True:
             print("La opcion no existe")
             break
         elif opcion == 1:
-            rango = int(input("cuantas tareas vas agregar: "))
+            try:          
+                rango = int(input("cuantas tareas vas agregar: "))
+            except:
+                print("tienes que ingresar un valor correcto")
+                continue
             for i in range(rango):
                 tareas.append(input("Agrega una tarea: "))
             break
