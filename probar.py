@@ -1,9 +1,10 @@
-lista = ["NOMRE", "edad"]
-buscar = input("Escribe tu nombre")
+usuarios = [
+    {"usuario": "esteban", "edad": 18},
+    {"usuario": "daniel", "edad": 20},
+    {"usuario": "diego", "edad": 23}
+]
 
-if buscar in lista:
-    print("Si esta")
-else:
-    print("noo esta")
+for i in usuarios:
+    print(i["usuario"])
 
-# sistema que nos ayuda a buscar la informacion de las personas
+print(type(i))

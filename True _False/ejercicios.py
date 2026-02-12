@@ -29,17 +29,51 @@
 
 # nivel 4
 
-numeros = [20,6,8]
+# numeros = [20,6,8]
 
-hay_impar = False
+# hay_impar = False
 
-for i in numeros:
-    residuo = i % 2
-    if residuo == 1:
-        hay_impar = True
+# for i in numeros:
+#     residuo = i % 2
+#     if residuo == 1:
+#         hay_impar = True
 
 
-if hay_impar:
-    print("Hay un numero impar")
-else:
-    print("Todos son pares")
+# if hay_impar:
+#     print("Hay un numero impar")
+# else:
+#     print("Todos son pares")
+
+#nivel 5
+# nombre  = ["Ana", "Luis", "Carlos"]
+# existe = False
+
+# nombre_nuevo = input("Escribe un nombre: ")
+
+# for i in nombre:
+#     if i == nombre_nuevo:
+#         existe = True
+
+# if existe: 
+#     print("Nombre repetido")
+# else:
+#     print("Se puede agregar")
+
+#nivel 6
+
+# nombres = ["Esteban", "Daniel"]
+# usuario = input("escribe un nombre: ")
+# existe = False
+
+# for i in nombres:
+#     if i == usuario:
+#         existe = True
+#         break
+
+# if existe:
+#     print("No se puedea agregar este nombre ya que esta agregado ")
+# else:
+#     nombres.append(usuario)
+#     print("Se agrego correctamente")
+#     print(nombres)
+
