@@ -6,5 +6,3 @@ usuarios = [
 
 for i in usuarios:
     print(i["usuario"])
-
-print(type(i))

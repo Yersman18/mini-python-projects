@@ -30,7 +30,6 @@ while terminar:
             usuarios.append(usuario)
             print(usuarios)
     elif opcion == 2:
-
         print("Escribe los datos que registraste para iniciar sesion")
         try:
             nombre_ingresado = input("Nombre: ")
