@@ -28,9 +28,9 @@ while True:
         print("")
         opcion = int(input("Escoge una opcion: "))
         if opcion == 1:
-            usuario = {}
+            usuario = {} #creamos un diccionario interno para enviar estos datos al diccionario principal
             nombre = input("Escribe tu nombre: ")
-            usuarios[nombre] = usuario
+            usuarios[nombre] = usuario # Creamos la clave que le vamos asignar al diccionario principal 
             usuario["banco_asociado"] = input("Escribe el nombre de tu banco asociado: ")
             usuario["saldo_inicial"] = int(input("Escribe tu saldo inicial"))
         elif opcion == 2:
@@ -38,12 +38,12 @@ while True:
         elif opcion == 3:
             buscar_usuario = input("Esscribe el nombre del usuario que quiere buscar: ")
             if buscar_usuario in usuarios:
-                print(usuarios[buscar_usuario])
+                print(usuarios[buscar_usuario]) # Del diccionario principal imprimimos la clave principal
         elif opcion == 4:
             buscar_saldo = input("Escribe el nombre de la persona: ")
             if buscar_saldo in usuarios:
                 sumando = int(input("Cuanto le va a sumar? "))
-                usuarios[buscar_saldo]["saldo_inicial"] += sumando
+                usuarios[buscar_saldo]["saldo_inicial"] += sumando # buscamos el nombre y del nombre imprimimos la informacion  
                 print("Nuevo saldo:", usuarios[buscar_saldo]["saldo_inicial"])    
         elif opcion == 5:
             buscar_banco = input("Escribe el nombre de la persona para buscar del banco asociado: ")
