@@ -33,30 +33,34 @@ while True:
                 else:
                     print("Este nombre no es valido, ingrese otro")
                     continue
-                identificiones = ["cc", "ti", "ce"]
-                usuario["tipo_identificacion"] = input("Tipo de identificacion: ej (cc, ti, ce) ")
-                if usuario["tipo_identificacion"] in identificiones:
-                    usuario["tipo_identificacion"]
-                else:
-                    print("Tipo de identificacion invalido")
-                    continue
-                try:
-                    numero_registro = int(input("Numero de identificacion: "))
-                except: 
-                    print("Solo permite los numeros de la identificacion")
-                    continue
-                usuarios[numero_registro] = usuario 
-                print(usuarios)
-                break
-
-            elif usuario_inactivo == 2:
-                print("---INICIO DE SESION---")
-                # vamos para verificar los datos que registro en el sistema
-                val_identificacion = input("ingrese el tipo de identificacion: ")
-                val_documento = int(input("ingrese su numero de identificacion: "))
-                val_nombre = input("Ingrese el nombre: ")
-                if val_documento in usuarios:
-                    print(val_nombre == usuarios[numero_registro]['nombre_registro'])
-    
-            
+                while True:
+                    identificiones = ["cc", "ti", "ce"]
+                    usuario["tipo_identificacion"] = input("Tipo de identificacion: ej (cc, ti, ce) ")
+                    if usuario["tipo_identificacion"] in identificiones:
+                        usuario["tipo_identificacion"]
+                        break
+                    else:
+                        print("Tipo de identificacion invalido")
+                while True:
+                    try:
+                        numero_registro = int(input("Numero de identificacion: "))
+                    except: 
+                        print("Solo permite los numeros de la identificacion")
+                    
+                    usuarios[numero_registro] = usuario 
+                    print(usuarios)
+                    print("¡Se agrego al sistema!")
+                    break
+            break
+        if usuario_inactivo == 2:
+            print("---INICIO DE SESION---")
+            # vamos para verificar los datos que registro en el sistema
+            val_identificacion = input("ingrese el tipo de identificacion: ")
+            val_documento = int(input("ingrese su numero de identificacion: "))
+            val_nombre = input("Ingrese el nombre: ")
+            if val_documento in usuarios:
+                print(val_nombre == usuarios[numero_registro]['nombre_registro'])   
+        elif usuario_inactivo == 0:
+            print(usuarios)  
+        
             
