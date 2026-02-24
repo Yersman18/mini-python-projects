@@ -1,4 +1,7 @@
 # Sistema bancario con logica real
+from xmlrpc.client import boolean
+
+
 usuario_inactivo = 0
 usuarios = {}
 usuario_activo = None
@@ -21,26 +24,39 @@ while True:
             if usuario_inactivo ==  1:
                 # REGISTRO DE USUARIO
                 usuario = {}
-                agregar_nombre = False
+                encontro = False
+                numero_registro = 0
                 usuario['nombre_registro'] = input("Nombre: ") # Es tipo str (string)
                 print(len(usuario['nombre_registro']))
                 if (usuario['nombre_registro'].isalpha()) == True:
                     usuario["nombre_registro"]
-                    print("Nombre agregado")    
                 else:
-                    print("No es posible agregar el nombre")
+                    print("Este nombre no es valido, ingrese otro")
                     continue
-                usuario['tipo_identificacion'] = input("Tipo de identificacion: ")
-                numero_registro = int(input("Numero de identiciacion: "))
+                identificiones = ["cc", "ti", "ce"]
+                usuario["tipo_identificacion"] = input("Tipo de identificacion: ej (cc, ti, ce) ")
+                if usuario["tipo_identificacion"] in identificiones:
+                    usuario["tipo_identificacion"]
+                else:
+                    print("Tipo de identificacion invalido")
+                    continue
+                try:
+                    numero_registro = int(input("Numero de identificacion: "))
+                except: 
+                    print("Solo permite los numeros de la identificacion")
+                    continue
                 usuarios[numero_registro] = usuario 
                 print(usuarios)
-                print(usuarios[numero_registro])
                 break
+
             elif usuario_inactivo == 2:
                 print("---INICIO DE SESION---")
+                # vamos para verificar los datos que registro en el sistema
                 val_identificacion = input("ingrese el tipo de identificacion: ")
-                val_documento = input("ingrese su numero de identificacion: ")
-                val_contraseña = input("Ingrese la  contraseña: ")    
+                val_documento = int(input("ingrese su numero de identificacion: "))
+                val_nombre = input("Ingrese el nombre: ")
+                if val_documento in usuarios:
+                    print(val_nombre == usuarios[numero_registro]['nombre_registro'])
     
             
             
