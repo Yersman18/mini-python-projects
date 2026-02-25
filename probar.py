@@ -1,8 +1,13 @@
-usuario = ['daniel', 'esteban']
+# Verificando si el usuario existe
+usuarios = {
+    'Esteban': {},
+    'Daniel': {}
+}
 
-buscar_nombre = input("escribe un nombre: ")
+usuario = "Esteban"
 
-if buscar_nombre in usuario:
-    print("esta")
+
+if usuario in usuarios:
+    print("Si esta")
 else:
     print("no esta")
