@@ -3,7 +3,8 @@
 usuario_inactivo = 0
 usuarios = {}
 usuario_activo = None
-while True: 
+banco = True
+while banco: 
     if usuario_activo == None:
         banco = True
         print("persona no logueada")
@@ -51,9 +52,7 @@ while True:
                     continue
                 else:
                     usuarios[numero_registro] = usuario 
-                    print(usuarios)
                     print("¡Se agrego al sistema!")
-                    print(usuarios)
                     break
 
         if usuario_inactivo == 2:
@@ -61,18 +60,35 @@ while True:
             val_documento = int(input("Ingrese su numero de identificacion: "))
             if val_documento in usuarios:
                 usuario_activo = val_documento
+                nombre_usuario = usuarios[val_documento]['nombre_registro']
+            else:
+                print('''Credenciales incorrectas''')            
     else:
-        usuario_activo = val_documento
-        print("ESTE ES EL MENU DE CUENTAS DEL USARIO ")
-        break
-
-
-            
-
-        
-
-        
-      
-                
-
-            
+       if usuario_activo == val_documento:
+        print (f"Bienvenido {usuarios[val_documento]['nombre_registro']}")
+        print("Tipos de cuenta:")
+        print("1. Crear cuenta")
+        print("2. Consultar cuentas")
+        print("3. Salir")
+        usuario_opcion = 0
+        while True:
+            try:
+                usuario_opcion = int(input("Elige una opcion: "))
+            except:
+                print("Esta opcion no es valida")
+            while True:
+                if usuario_opcion == 1: 
+                    print("")
+                    print("---CREAR CUENTA---\n")
+                    print("Para abrir abrir esta cuenta necesitamos la siguiente informacion: ")
+                    print("1.Abrir cuenta de ahorros")
+                    print("2.Abrir cuenta corriente")
+                    usuario_cuenta = int(input("Elige un opcion:"))
+                    if usuario_cuenta == 1:
+                        cuenta_corriente = {}
+                        cuenta_corriente['num_documento'] = int(input("Escribe tu numero de identificacion: "))
+                        cuenta_corriente['correo'] = (input("Escribe tu correo elecotronico: "))
+                        print(cuenta_corriente)
+                elif usuario_opcion == 3:
+                    print("Gracias por si visita")
+                    usuario_activo = None
