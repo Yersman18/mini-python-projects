@@ -63,8 +63,8 @@ while banco:
             else:
                 print('''Credenciales incorrectas''')            
     else:
-       cuentas = {} # almacena las cuentas 
-       if usuario_activo == val_documento:
+     cuentas_usuario = {}# almacena las cuentas 
+     if usuario_activo == val_documento:
         print("")
         print (f"Bienvenido {usuarios[val_documento]['nombre_registro']}!")
         print("")
@@ -74,18 +74,19 @@ while banco:
         print("3. Salir")
         print("")
         usuario_opcion = 0
+        cuentas = {}
         try:
             usuario_opcion = int(input("Elige una opcion: "))
         except:
             print("Esta opcion no es valida")
             continue
         while usuario_activo == val_documento:
-            if usuario_opcion == 1: 
+            if usuario_opcion == 1:
                 print("")
                 print("---CREAR CUENTA---\n")
                 print("Que cuenta quiere abrir: ")
                 print("1.Abrir cuenta de ahorros")
-                print("2.Buscar cuentas")
+                print("2.Abrir cuenta corriente")
                 print("0.Salir")
                 try:
                     usuario_cuenta = int(input("Elige un opcion: "))
@@ -94,16 +95,24 @@ while banco:
                     continue              
                 if usuario_cuenta == 1:
                     cuenta_ahorro = {}
-                    no_encontro = True
                     cuenta_ahorro['nombre_cuenta'] = input("Escriba un nombre para su cuenta: ")
                     cuenta_ahorro['correo'] = (input("Escribe tu correo electronico: "))
                     cuenta_ahorro['saldo_inicial'] = int(input("Escribe el saldo inicilal:   "))
-                    cuentas["Cuenta ahorro"] = cuenta_ahorro # agrega la cuenta a cuentas
+                    cuentas["cuenta_ahorro"] = cuenta_ahorro # agrega la cuenta a cuentas
+                    
                 elif usuario_cuenta == 2:
-                    buscar_cuenta = input("Que tipo de cuenta deseas buscar? ")
-                    if buscar_cuenta == 1:
-                        print("Esta es la cuenta que tienes con su salgo:")
-                        print(cuentas["Cuenta ahorro"])
+                    cuenta_corriente = {}
+                    cuenta_corriente['nombre_cuenta_corriente'] = input("Escriba su nombre completo: ")
+                    cuenta_corriente["correo_cuenta_corriente"] = input("escriba su correo eletronico:")
+                    cuenta_corriente["suelddo_iniicial_corriente"] = (input("Escriba su sueldo inicial"))
+                    cuentas["cuenta_Corriente"] = cuenta_corriente
+            
                 elif usuario_cuenta == 0:
-                    break
-        #falta salir bien
+                    print(cuentas)
+            elif usuario_opcion == 2:
+                print(cuentas)
+            elif usuario_opcion == 3:
+                print("Ha cerrado sesion!")
+                usuario_activo = None
+
+                
