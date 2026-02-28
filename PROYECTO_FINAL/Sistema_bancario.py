@@ -1,5 +1,5 @@
 # Sistema bancario con logica real
-
+cuentas = {}
 usuario_inactivo = 0
 usuarios = {}
 usuario_activo = None
@@ -74,7 +74,6 @@ while banco:
         print("3. Salir")
         print("")
         usuario_opcion = 0
-        cuentas = {}
         try:
             usuario_opcion = int(input("Elige una opcion: "))
         except:
@@ -95,24 +94,25 @@ while banco:
                     continue              
                 if usuario_cuenta == 1:
                     cuenta_ahorro = {}
-                    cuenta_ahorro['nombre_cuenta'] = input("Escriba un nombre para su cuenta: ")
+                    cuenta_ahorro['nombre_cuenta_'] = input("Escriba un nombre para su cuenta: ")
                     cuenta_ahorro['correo'] = (input("Escribe tu correo electronico: "))
                     cuenta_ahorro['saldo_inicial'] = int(input("Escribe el saldo inicilal:   "))
-                    cuentas["cuenta_ahorro"] = cuenta_ahorro # agrega la cuenta a cuentas
-                    
+                    usuario["cuenta_ahorro"] = cuenta_ahorro # agrega la cuenta a cuentas
                 elif usuario_cuenta == 2:
                     cuenta_corriente = {}
                     cuenta_corriente['nombre_cuenta_corriente'] = input("Escriba su nombre completo: ")
                     cuenta_corriente["correo_cuenta_corriente"] = input("escriba su correo eletronico:")
-                    cuenta_corriente["suelddo_iniicial_corriente"] = (input("Escriba su sueldo inicial"))
-                    cuentas["cuenta_Corriente"] = cuenta_corriente
-            
+                    cuenta_corriente["suelddo_inicial_corriente"] = int(input("Escriba su sueldo inicial"))
+                    usuario["cuenta_Corriente"] = cuenta_corriente
                 elif usuario_cuenta == 0:
-                    print(cuentas)
+                    print(usuario)
+                    break
             elif usuario_opcion == 2:
-                print(cuentas)
+                print(cuentas) # imprime todas las cuentas que tenemos del usuario
+                break
             elif usuario_opcion == 3:
                 print("Ha cerrado sesion!")
                 usuario_activo = None
+                # controlar los datos de cada usuario PROXIMAMENTE
 
                 
